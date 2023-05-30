@@ -1,0 +1,33 @@
+﻿@model List<Ders>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Adı</th>
+                <th>Saati</th>
+                <th>Ogretmen</th>
+                <th>Tür</th>
+                <th>Tarih</th>
+                <th>Onay</th>
+                <th>İşlem</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.Id</th>
+                    <th>@item.Adi</th>
+                    <th>@item.Saati</th>
+                    <th>@item.Ogretmeni</th>
+                    <th>@item.Tur</th>
+                    <th>@item.Tarih.Value.ToShortDateString()</th>
+                    <th>@item.Onay</th>
+                    <th>
+                        <a href='/home/dersekle/@item.Id'>Güncelle</a>
+                        <a onclick="return confirm('Silmek İstediğinize Emin Misiniz?')" href='/home/dersSil/@item.Id'>Sil</a>
+                    </th>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

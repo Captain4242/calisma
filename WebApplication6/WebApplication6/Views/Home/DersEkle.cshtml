@@ -1,0 +1,34 @@
+﻿@model Ders
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <form method="post" action="/home/dersekle">
+                <input asp-for="Id" type="hidden" />
+                <input asp-for="Tarih" type="hidden" />
+                <div class="form-group">
+                    <label asp-for="Adi">Ders Adı</label>
+                    <input class="form-control" asp-for="Adi">
+                    <span asp-validation-for="Adi" class="form-text text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Saati">Ders Saati</label>
+                    <input class="form-control" asp-for="Saati">
+                    <span asp-validation-for="Saati" class="form-text text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ogretmeni">Ders Öğretmeni</label>
+                    <input class="form-control" asp-for="Ogretmeni">
+                    <span asp-validation-for="Ogretmeni" class="form-text text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Tur">Ders Türü</label>
+                    <input class="form-control" asp-for="Tur">
+                    <span asp-validation-for="Tur" class="form-text text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" asp-for="Onay">
+                    <label class="form-check-label" asp-for="Onay">Onayla</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+        </div>
+    </div>
